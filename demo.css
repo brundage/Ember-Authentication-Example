@@ -1,0 +1,34 @@
+body { color: #5F5050; margin: 2em 1em;  }
+
+h1 { margin: 0 0 0.2em 0; }
+
+p { margin: 0.5em 0; }
+
+a {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.container {
+}
+
+.flash {
+    border: double 3px #5fa;
+    padding: 0.5em 1em;
+}
+
+.warning {
+    border: double 3px #f00;
+}
+
+.debug {
+    color: #555;
+    font-size: 0.8em;
+}
+
+#footer {
+    margin-top: 6em;
+    text-align: right;
+}
+
+#footer a { color: #825;  }

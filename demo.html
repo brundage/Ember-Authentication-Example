@@ -1,0 +1,55 @@
+<script type="text/x-handlebars" data-template-name="application">
+<div class='container' id='application'>
+    <header>
+        <h1>Ember Auth Test</h1>
+        <p class="debug">authenticated: {{authenticated}}</p>
+        {{view App.NavigationView}}
+    </header>
+    {{#if flashMessage}}
+        <aside>
+            <p class="flash">{{flashMessage}}</p>
+        </aside>
+    {{/if}}
+    <article>
+        {{outlet}}
+    </article>
+    </div>
+    <footer><div id="footer"><a href="http://blog.deanbrundage.com">by Dean</a></div></footer>
+</script>
+
+<script type="text/x-handlebars" data-template-name="navigation">
+    <nav><div class="container" id='navigation'>
+        {{#if authenticated}}
+            <a {{action toggleAuthentication}}>Log Out</a> |
+            <a {{action goHome}}>Home</a> |
+            <a {{action listNews}}>News</a>
+        {{else}}
+            <a {{action toggleAuthentication}}>Log In</a> |
+            <a {{action beSneaky}}>Try Unauthorized</a>
+        {{/if}}
+    </div></nav>
+</script>
+
+<script type="text/x-handlebars" data-template-name="home">
+    <div class="container" id='home'>
+    <h2>Welcome home {{userName}}</h2>
+    {{#if authenticated}}
+        <h3>You have news!</h3>
+    {{/if}}
+    <p>Thanks for visiting</p>
+</div>
+</script>
+
+<script type="text/x-handlebars" data-template-name="listNews">
+    <div class="container" id='news'>
+        <h2>Newsfeed</h2>
+        {{#unless authenticated}}
+            <p class="warning flash">You should only see this when "logged in."</p>
+        {{/unless}}
+        <ul class="newsfeed">
+            {{#each newsItem in controller}}
+                <li>{{newsItem.text}}</li>
+            {{/each}}
+        </ul>
+    </div>
+</script>

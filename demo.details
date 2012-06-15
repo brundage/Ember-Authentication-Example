@@ -1,0 +1,9 @@
+---
+ name: Ember.js authentication demo
+ description: Use Ember.Router to manage the state of user authentication
+ authors:
+   - Dean Brundage
+ resources:
+   - https://github.com/downloads/wycats/handlebars.js/handlebars-1.0.0.beta.6.js
+   - http://cloud.github.com/downloads/emberjs/ember.js/ember-latest.js
+ normalize_css: no

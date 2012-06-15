@@ -128,4 +128,4 @@ App.ListNewsController = Ember.ArrayController.extend({
     authenticatedBinding : Ember.Binding.oneWay('App.stateManager.authenticated')
 });
 
-App.initialize();
+jQuery(document).ready(function() { App.initialize(); } );
